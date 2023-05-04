@@ -1,0 +1,58 @@
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="css/bootstrap.min.css" rel="stylesheet">    
+<link href="css/login.css" rel="stylesheet">
+<script type="text/javascript">
+var attempt = 3;
+function validate(){
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	
+	if ( username == "abc" && password == "abc")
+	{
+		//alert ("Login successfully");
+		sessionStorage.setItem("loginStatus", true);
+		window.location = "pass.html";
+		return false;
+	}
+	else
+	{
+		attempt --;
+		alert("You have left "+attempt+" attempt;");
+		
+		if( attempt == 0)
+		{
+			document.getElementById("username").disabled = true;
+			document.getElementById("password").disabled = true;
+			document.getElementById("submit").disabled = true;
+			return false;
+		}
+	}
+}
+
+</script>
+
+</head>
+
+<body class="text-center">
+
+	<form class="form-signin">
+      <img class="mb-4" src="images/chp-logo.png" alt="" width="200">
+      <label for="inputEmail" class="sr-only">Kullanıcı Adı</label>
+	  <input type="text" name="username" id="username" class="form-control" placeholder="Kullanıcı Adı..." required />
+      <label for="inputPassword" class="sr-only">Şifre</label>
+      <input type="password" id="password" class="form-control" placeholder="Şifre..." required>
+      
+      <button class="btn btn-lg btn-danger btn-block" type="button" onclick="validate()">Giriş Yap</button>
+      <p class="mt-5 mb-3 text-muted">Copyright &copy; 2023</p>
+    </form>
+
+
+</body>
+
+</html>

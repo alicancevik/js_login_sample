@@ -1,0 +1,23 @@
+<html>
+
+<head>
+
+<script type="text/javascript">
+	function checkLogin()
+	{
+		var loginStatus = sessionStorage.getItem("loginStatus");
+		/*
+		if(loginStatus == null || loginStatus == false)
+		{
+			window.location = "index.html";
+		} */
+	}
+</script>
+
+</head>
+
+<body onload="checkLogin()">
+	<h2> LOGIN SUCCESS </h2>
+</body>
+
+</html>
